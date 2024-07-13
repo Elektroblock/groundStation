@@ -1,18 +1,45 @@
+import time
 from queue import Queue
 from threading import Thread
 from receiver import wait_for_data
-from webserver import run_webserver
+from webclient import run_webserver_client
+from config import DEBUG, use_webclient
+import json
+import os
+import glob
 
-receiver_queue = Queue()
-webserver_queue = Queue()
 
-receiver_thread = Thread(target=wait_for_data, args=(receiver_queue, webserver_queue,))
-webserver_thread = Thread(target=run_webserver, args=(receiver_queue, webserver_queue,))
-receiver_thread.daemon = False
-webserver_thread.daemon = False
+def run():
+    if (DEBUG):
+        with open("data.json", 'w') as file:
+            json.dump({"data": []}, file, indent=4)
 
-receiver_thread.start()
-webserver_thread.start()
+        print("cleared data.json")
 
-while True:
-    pass
+        files = glob.glob('images/*')
+        cleared_files = 0
+        for f in files:
+            if f.endswith('.jpg'):
+                os.remove(f)
+                cleared_files += 1
+        print(f"cleared {cleared_files} Images")
+        time.sleep(2)
+
+    webserver_queue = Queue()
+
+    receiver_thread = Thread(target=wait_for_data, args=(webserver_queue,))
+    webclient_thread = Thread(target=run_webserver_client, args=(webserver_queue,))
+    receiver_thread.daemon = False
+    webclient_thread.daemon = False
+
+    receiver_thread.start()
+
+    if use_webclient:
+        webclient_thread.start()
+
+    while True:
+        time.sleep(100)
+
+
+if __name__ == '__main__':
+    run()

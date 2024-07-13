@@ -10,24 +10,20 @@ from PIL import Image
 imageBytes = b''
 
 
-def wait_for_data(receiver_queue, webserver_queue):
+def wait_for_data(webserver_queue):
 
     #exit()
-    directory = "out"
-    for i in range(0, 14071):
-        filename = "out/" + "output" + str(i) + ".bin"
-        #filename = "bild.bin"
+    files = glob.glob('out/*')
+    for filename in files:
+
         print(filename)
 
         f = open(filename, "rb")
 
         input_raw_data = f.read()
-        #if len(input_raw_data) == 0:
-            #continue
-        f.close()
-        #open(filename, "w").close()
 
-        #print(input_raw_data)
+        f.close()
+
 
         if input_raw_data[0] == 118:  # test for v character at beginning (Image Data)
             print("Image Data")
@@ -41,7 +37,6 @@ def wait_for_data(receiver_queue, webserver_queue):
             print("last Image Data")
             handle_image(input_raw_data[1:], True, webserver_queue)
 
-        #print(input_raw_data[0])
 
 
 def handle_sensor(input_data, webserver_queue):
@@ -77,7 +72,7 @@ def handle_image(input_data, last_data_block, webserver_queue):
 def build_image(imageBytes, image_time, webserver_queue):
     image_stream = io.BytesIO(imageBytes)
     image = Image.open(image_stream)
-    image.save('webservercontent/images/' + image_time + '.jpg')
+    image.save('images/' + image_time + '.jpg')
     print("Decoded Image Size:", len(imageBytes))
     print("Image received and saved successfully!")
     webserver_queue.put({"image": image_time + ".jpg"})
