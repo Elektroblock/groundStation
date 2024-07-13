@@ -5,16 +5,20 @@ import time
 import json
 from threading import Thread
 import os
-from PIL import Image
+
 
 imageBytes = b''
 
+from PIL import Image, ImageFile
+ImageFile.LOAD_TRUNCATED_IMAGES = True # Allow to safe bad images
 
 def wait_for_data(webserver_queue):
 
     #exit()
     files = glob.glob('out/*')
-    for filename in files:
+
+    for i in range(0, len(files)):
+        filename = "out/" + "output" + str(i) + ".bin"
 
         print(filename)
 
