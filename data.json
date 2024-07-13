@@ -1,0 +1,374 @@
+{
+    "data": [
+        {
+            "send_time": 3.0,
+            "receive_time": 1720729538.9898498,
+            "temperature": 5.0,
+            "humidity": 7.0,
+            "pressure": 2.0,
+            "gps_lon": 5.0,
+            "gps_lat": 5.0,
+            "gps_alt": 2.0
+        },
+        {
+            "send_time": 3.0,
+            "receive_time": 1720729540.2458591,
+            "temperature": 5.0,
+            "humidity": 7.0,
+            "pressure": 2.0,
+            "gps_lon": 5.0,
+            "gps_lat": 5.0,
+            "gps_alt": 2.0
+        },
+        {
+            "send_time": 3.0,
+            "receive_time": 1720729541.393497,
+            "temperature": 5.0,
+            "humidity": 7.0,
+            "pressure": 2.0,
+            "gps_lon": 5.0,
+            "gps_lat": 5.0,
+            "gps_alt": 2.0
+        },
+        {
+            "send_time": 3.0,
+            "receive_time": 1720729542.8506658,
+            "temperature": 5.0,
+            "humidity": 7.0,
+            "pressure": 2.0,
+            "gps_lon": 5.0,
+            "gps_lat": 5.0,
+            "gps_alt": 2.0
+        },
+        {
+            "send_time": 3.0,
+            "receive_time": 1720729544.245456,
+            "temperature": 5.0,
+            "humidity": 7.0,
+            "pressure": 2.0,
+            "gps_lon": 5.0,
+            "gps_lat": 5.0,
+            "gps_alt": 2.0
+        },
+        {
+            "send_time": 3.0,
+            "receive_time": 1720729545.6246986,
+            "temperature": 5.0,
+            "humidity": 7.0,
+            "pressure": 2.0,
+            "gps_lon": 5.0,
+            "gps_lat": 5.0,
+            "gps_alt": 2.0
+        },
+        {
+            "send_time": 3.0,
+            "receive_time": 1720729546.8644366,
+            "temperature": 5.0,
+            "humidity": 7.0,
+            "pressure": 2.0,
+            "gps_lon": 5.0,
+            "gps_lat": 5.0,
+            "gps_alt": 2.0
+        },
+        {
+            "send_time": 3.0,
+            "receive_time": 1720729548.2128167,
+            "temperature": 5.0,
+            "humidity": 7.0,
+            "pressure": 2.0,
+            "gps_lon": 5.0,
+            "gps_lat": 5.0,
+            "gps_alt": 2.0
+        },
+        {
+            "send_time": 3.0,
+            "receive_time": 1720729549.577424,
+            "temperature": 5.0,
+            "humidity": 7.0,
+            "pressure": 2.0,
+            "gps_lon": 5.0,
+            "gps_lat": 5.0,
+            "gps_alt": 2.0
+        },
+        {
+            "send_time": 3.0,
+            "receive_time": 1720729550.8951209,
+            "temperature": 5.0,
+            "humidity": 7.0,
+            "pressure": 2.0,
+            "gps_lon": 5.0,
+            "gps_lat": 5.0,
+            "gps_alt": 2.0
+        },
+        {
+            "send_time": 3.0,
+            "receive_time": 1720729552.2905035,
+            "temperature": 5.0,
+            "humidity": 7.0,
+            "pressure": 2.0,
+            "gps_lon": 5.0,
+            "gps_lat": 5.0,
+            "gps_alt": 2.0
+        },
+        {
+            "send_time": 3.0,
+            "receive_time": 1720729553.747168,
+            "temperature": 5.0,
+            "humidity": 7.0,
+            "pressure": 2.0,
+            "gps_lon": 5.0,
+            "gps_lat": 5.0,
+            "gps_alt": 2.0
+        },
+        {
+            "send_time": 3.0,
+            "receive_time": 1720729555.2669926,
+            "temperature": 5.0,
+            "humidity": 7.0,
+            "pressure": 2.0,
+            "gps_lon": 5.0,
+            "gps_lat": 5.0,
+            "gps_alt": 2.0
+        },
+        {
+            "send_time": 3.0,
+            "receive_time": 1720729556.3987455,
+            "temperature": 5.0,
+            "humidity": 7.0,
+            "pressure": 2.0,
+            "gps_lon": 5.0,
+            "gps_lat": 5.0,
+            "gps_alt": 2.0
+        },
+        {
+            "send_time": 3.0,
+            "receive_time": 1720729557.9484653,
+            "temperature": 5.0,
+            "humidity": 7.0,
+            "pressure": 2.0,
+            "gps_lon": 5.0,
+            "gps_lat": 5.0,
+            "gps_alt": 2.0
+        },
+        {
+            "send_time": 3.0,
+            "receive_time": 1720729559.3896158,
+            "temperature": 5.0,
+            "humidity": 7.0,
+            "pressure": 2.0,
+            "gps_lon": 5.0,
+            "gps_lat": 5.0,
+            "gps_alt": 2.0
+        },
+        {
+            "send_time": 3.0,
+            "receive_time": 1720729560.908513,
+            "temperature": 5.0,
+            "humidity": 7.0,
+            "pressure": 2.0,
+            "gps_lon": 5.0,
+            "gps_lat": 5.0,
+            "gps_alt": 2.0
+        },
+        {
+            "send_time": 3.0,
+            "receive_time": 1720729562.1028023,
+            "temperature": 5.0,
+            "humidity": 7.0,
+            "pressure": 2.0,
+            "gps_lon": 5.0,
+            "gps_lat": 5.0,
+            "gps_alt": 2.0
+        },
+        {
+            "send_time": 3.0,
+            "receive_time": 1720729563.3113227,
+            "temperature": 5.0,
+            "humidity": 7.0,
+            "pressure": 2.0,
+            "gps_lon": 5.0,
+            "gps_lat": 5.0,
+            "gps_alt": 2.0
+        },
+        {
+            "send_time": 3.0,
+            "receive_time": 1720729564.9544954,
+            "temperature": 5.0,
+            "humidity": 7.0,
+            "pressure": 2.0,
+            "gps_lon": 5.0,
+            "gps_lat": 5.0,
+            "gps_alt": 2.0
+        },
+        {
+            "send_time": 3.0,
+            "receive_time": 1720729566.3032057,
+            "temperature": 5.0,
+            "humidity": 7.0,
+            "pressure": 2.0,
+            "gps_lon": 5.0,
+            "gps_lat": 5.0,
+            "gps_alt": 2.0
+        },
+        {
+            "send_time": 3.0,
+            "receive_time": 1720729567.5280135,
+            "temperature": 5.0,
+            "humidity": 7.0,
+            "pressure": 2.0,
+            "gps_lon": 5.0,
+            "gps_lat": 5.0,
+            "gps_alt": 2.0
+        },
+        {
+            "send_time": 3.0,
+            "receive_time": 1720729568.6897147,
+            "temperature": 5.0,
+            "humidity": 7.0,
+            "pressure": 2.0,
+            "gps_lon": 5.0,
+            "gps_lat": 5.0,
+            "gps_alt": 2.0
+        },
+        {
+            "send_time": 3.0,
+            "receive_time": 1720729569.9612927,
+            "temperature": 5.0,
+            "humidity": 7.0,
+            "pressure": 2.0,
+            "gps_lon": 5.0,
+            "gps_lat": 5.0,
+            "gps_alt": 2.0
+        },
+        {
+            "send_time": 3.0,
+            "receive_time": 1720729570.4610882,
+            "temperature": 5.0,
+            "humidity": 7.0,
+            "pressure": 2.0,
+            "gps_lon": 5.0,
+            "gps_lat": 5.0,
+            "gps_alt": 2.0
+        },
+        {
+            "send_time": 3.0,
+            "receive_time": 1720729571.991609,
+            "temperature": 5.0,
+            "humidity": 7.0,
+            "pressure": 2.0,
+            "gps_lon": 5.0,
+            "gps_lat": 5.0,
+            "gps_alt": 2.0
+        },
+        {
+            "send_time": 3.0,
+            "receive_time": 1720729573.774046,
+            "temperature": 5.0,
+            "humidity": 7.0,
+            "pressure": 2.0,
+            "gps_lon": 5.0,
+            "gps_lat": 5.0,
+            "gps_alt": 2.0
+        },
+        {
+            "send_time": 3.0,
+            "receive_time": 1720729575.355125,
+            "temperature": 5.0,
+            "humidity": 7.0,
+            "pressure": 2.0,
+            "gps_lon": 5.0,
+            "gps_lat": 5.0,
+            "gps_alt": 2.0
+        },
+        {
+            "send_time": 3.0,
+            "receive_time": 1720729576.828299,
+            "temperature": 5.0,
+            "humidity": 7.0,
+            "pressure": 2.0,
+            "gps_lon": 5.0,
+            "gps_lat": 5.0,
+            "gps_alt": 2.0
+        },
+        {
+            "send_time": 3.0,
+            "receive_time": 1720729578.2848527,
+            "temperature": 5.0,
+            "humidity": 7.0,
+            "pressure": 2.0,
+            "gps_lon": 5.0,
+            "gps_lat": 5.0,
+            "gps_alt": 2.0
+        },
+        {
+            "send_time": 3.0,
+            "receive_time": 1720729580.067231,
+            "temperature": 5.0,
+            "humidity": 7.0,
+            "pressure": 2.0,
+            "gps_lon": 5.0,
+            "gps_lat": 5.0,
+            "gps_alt": 2.0
+        },
+        {
+            "send_time": 3.0,
+            "receive_time": 1720729581.695296,
+            "temperature": 5.0,
+            "humidity": 7.0,
+            "pressure": 2.0,
+            "gps_lon": 5.0,
+            "gps_lat": 5.0,
+            "gps_alt": 2.0
+        },
+        {
+            "send_time": 3.0,
+            "receive_time": 1720729583.1212814,
+            "temperature": 5.0,
+            "humidity": 7.0,
+            "pressure": 2.0,
+            "gps_lon": 5.0,
+            "gps_lat": 5.0,
+            "gps_alt": 2.0
+        },
+        {
+            "send_time": 3.0,
+            "receive_time": 1720729584.764238,
+            "temperature": 5.0,
+            "humidity": 7.0,
+            "pressure": 2.0,
+            "gps_lon": 5.0,
+            "gps_lat": 5.0,
+            "gps_alt": 2.0
+        },
+        {
+            "send_time": 3.0,
+            "receive_time": 1720729585.5247095,
+            "temperature": 5.0,
+            "humidity": 7.0,
+            "pressure": 2.0,
+            "gps_lon": 5.0,
+            "gps_lat": 5.0,
+            "gps_alt": 2.0
+        },
+        {
+            "send_time": 3.0,
+            "receive_time": 1720729585.6317327,
+            "temperature": 5.0,
+            "humidity": 7.0,
+            "pressure": 2.0,
+            "gps_lon": 5.0,
+            "gps_lat": 5.0,
+            "gps_alt": 2.0
+        },
+        {
+            "send_time": 3.0,
+            "receive_time": 1720729586.995736,
+            "temperature": 5.0,
+            "humidity": 7.0,
+            "pressure": 2.0,
+            "gps_lon": 5.0,
+            "gps_lat": 5.0,
+            "gps_alt": 2.0
+        }
+    ]
+}
