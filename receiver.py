@@ -5,6 +5,7 @@ import time
 import json
 from threading import Thread
 import os
+import sx126x
 
 
 imageBytes = b''
@@ -14,33 +15,39 @@ ImageFile.LOAD_TRUNCATED_IMAGES = True # Allow to safe bad images
 
 def wait_for_data(webserver_queue):
 
-    #exit()
-    files = glob.glob('out/*')
+    node = sx126x.sx126x(serial_num = "COM3",freq=868,addr=36,power=22,rssi=False)
 
-    for i in range(0, len(files)):
-        filename = "out/" + "output" + str(i) + ".bin"
+    try:
+        packet_num = 1
 
-        print(filename)
+        while True:
+            input_raw_data = node.receive()
 
-        f = open(filename, "rb")
+            if input_raw_data == None:
+                continue
 
-        input_raw_data = f.read()
+            print(f"Received packet {packet_num}")
+            
+            if input_raw_data[0] == 118:  # test for v character at beginning (Image Data)
+                print("Image Data")
+                handle_image(input_raw_data[1:], False, webserver_queue)
 
-        f.close()
+            elif input_raw_data[0] == 115:  # test for s character at begingin (Sensor Data)
+                print("Sensor Data")
+                handle_sensor(input_raw_data.decode("utf-8"), webserver_queue)
 
+            elif input_raw_data[0] == 120:  # test for x character at beginning (last Image Data)
+                print("last Image Data")
+                handle_image(input_raw_data[1:], True, webserver_queue)
+                packet_num = 1
 
-        if input_raw_data[0] == 118:  # test for v character at beginning (Image Data)
-            print("Image Data")
-            handle_image(input_raw_data[1:], False, webserver_queue)
+            packet_num +=1
 
-        elif input_raw_data[0] == 115:  # test for s character at begingin (Sensor Data)
-            print("Sensor Data")
-            handle_sensor(input_raw_data.decode("utf-8"), webserver_queue)
+    except Exception as e:
+        print(e)
 
-        elif input_raw_data[0] == 120:  # test for x character at beginning (last Image Data)
-            print("last Image Data")
-            handle_image(input_raw_data[1:], True, webserver_queue)
-
+    finally:
+        node.free_serial()
 
 
 def handle_sensor(input_data, webserver_queue):
