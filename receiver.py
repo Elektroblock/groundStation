@@ -47,7 +47,7 @@ def wait_for_data(webserver_queue):
 
                 elif input_raw_data[0] == 120:  # test for x character at beginning (last Image Data)F
                     print("last Image Data")
-                    handle_image(input_raw_data[1:], True, webserver_queue)
+                    handle_image(input_raw_data[2:input_raw_data[1]], True, webserver_queue)
 
 
                 processed_files.add(file)
@@ -69,7 +69,7 @@ def handle_sensor(input_data, webserver_queue):
 
         json_block = {"send_time": float(data[1]), "receive_time": time.time(), "temperature": string_to_float(data[2]),
                       "humidity": string_to_float(data[3]), "pressure": string_to_float(data[4]),
-                      "gps_lon": string_to_float(data[9]), "gps_lat": string_to_float(data[10]), "gps_alt": string_to_float(data[8]), "gps_sat": string_to_float(data[11]), "gps_speed": string_to_float(data[12]), "magnetic_lon": string_to_float(data[5]), "magnetic_lat": string_to_float(data[6]), "magnetic_alt": string_to_float(data[7])}
+                      "gps_lon": string_to_float(data[9]), "gps_lat": string_to_float(data[10]), "gps_alt": string_to_float(data[8]), "gps_sat": string_to_float(data[11]), "gps_speed": string_to_float(data[12]), "magnetic_lon": string_to_float(data[5]), "magnetic_lat": string_to_float(data[6]), "magnetic_alt": string_to_float(data[7]), "co2": string_to_float(data[13]), "TVOC": string_to_float(data[14])}
 
         webserver_queue.put(json_block)
 
