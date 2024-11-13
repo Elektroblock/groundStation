@@ -3,6 +3,7 @@ import glob
 import io
 import time
 import json
+from dbm.dumb import error
 from threading import Thread
 import os
 
@@ -13,7 +14,7 @@ imageBytes = b''
 from PIL import Image, ImageFile
 ImageFile.LOAD_TRUNCATED_IMAGES = True # Allow to safe bad images
 
-def wait_for_data(webserver_queue):
+def wait_for_data(webserver_queue, message_queue):
     processed_files = set()
     #exit()
     while True:
@@ -28,14 +29,14 @@ def wait_for_data(webserver_queue):
 
                 filename = input_filepath + "/" + file
 
-                print(filename)
+                #print(filename)
 
                 f = open(filename, "rb")
 
                 input_raw_data = f.read()
 
                 f.close()
-                print(input_raw_data)
+                #print(input_raw_data)
 
                 if input_raw_data[0] == 118:  # test for v character at beginning (Image Data)
                     print("Image Data")
@@ -43,11 +44,12 @@ def wait_for_data(webserver_queue):
 
                 elif input_raw_data[0] == 115:  # test for s character at begingin (Sensor Data)
                     print("Sensor Data")
-                    handle_sensor(input_raw_data.decode("utf-8"), webserver_queue)
+                    print(input_raw_data)
+                    handle_sensor(input_raw_data.decode("utf-8"), webserver_queue, message_queue)
 
                 elif input_raw_data[0] == 120:  # test for x character at beginning (last Image Data)F
                     print("last Image Data")
-                    handle_image(input_raw_data[2:input_raw_data[1]], True, webserver_queue)
+                    handle_image(input_raw_data[2:input_raw_data[1]], True, webserver_queue, message_queue)
 
 
                 processed_files.add(file)
@@ -60,9 +62,16 @@ def wait_for_data(webserver_queue):
 
 
 
-def handle_sensor(input_data, webserver_queue):
+def handle_sensor(input_data, webserver_queue, message_queue):
     try:
         data = input_data.split("|")
+
+        errorPacket = data[15]
+        for i in range(0, len(errorPacket), 6):
+            if errorPacket[i] == "E":
+                message_queue.put(errorPacket[i:i+6])
+            else:
+                break
 
         with open("data.json", 'r') as file:
             json_data = json.load(file)
@@ -78,6 +87,7 @@ def handle_sensor(input_data, webserver_queue):
         with open("data.json", 'w') as file:
             json.dump(json_data, file, indent=4)
     except:
+        message_queue.put("Fehler beim verarbeiten der Daten")
         print("DATA Error")
 
 
@@ -85,7 +95,7 @@ def handle_image(input_data, last_data_block, webserver_queue):
     global imageBytes
     imageBytes += bytes(input_data)
     if last_data_block:
-        print(imageBytes)
+        #print(imageBytes)
         image_time = str(int(time.time()))
         handle_image_thread = Thread(target=build_image, args=(imageBytes, image_time, webserver_queue,))
         handle_image_thread.daemon = False
@@ -93,13 +103,18 @@ def handle_image(input_data, last_data_block, webserver_queue):
         imageBytes = b''
 
 
-def build_image(imageBytes, image_time, webserver_queue):
-    image_stream = io.BytesIO(imageBytes)
-    image = Image.open(image_stream)
-    image.save('images/' + image_time + '.jpg')
-    print("Decoded Image Size:", len(imageBytes))
-    print("Image received and saved successfully!")
-    webserver_queue.put({"image": image_time + ".jpg"})
+def build_image(imageBytes, image_time, webserver_queue, message_queue):
+    try:
+        image_stream = io.BytesIO(imageBytes)
+        image = Image.open(image_stream)
+        image.save('images/' + image_time + '.jpg')
+    except:
+        print("Fehler beim verarbeiten eines Bildes")
+        message_queue.put("Fehler beim verarbeiten eines Bildes")
+    else:
+        print("Decoded Image Size:", len(imageBytes))
+        print("Image received and saved successfully!")
+        webserver_queue.put({"image": image_time + ".jpg"})
 
 def string_to_float(s):
     try:
