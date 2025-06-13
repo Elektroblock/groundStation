@@ -1,5 +1,6 @@
 import json
 import time
+from time import sleep
 
 import requests
 
@@ -8,7 +9,7 @@ from config import api_key, server_url
 
 
 
-def run_webserver_client(webserver_queue):
+def run_webserver_client(webserver_queue, mess):
     session = requests.Session()
     while True:
         if webserver_queue.empty():
@@ -31,8 +32,9 @@ def upload_file(api_key, file_path, session):
         "Connection": "keep-alive"
     }
     response = session.post(url, files=files, headers=headers)
-    if response.status_code == 201:
-        print("File uploaded successfully")
+    if response.status_code == 200:
+        #print("File uploaded successfully")
+        sleep(0)
     else:
         print(f"Failed to upload file. Status code: {response.status_code}, Response: {response.text}")
 
@@ -40,11 +42,13 @@ def send_text(api_key, text_data, session):
     url = server_url + '/upload/data'
     headers = {
         'API-Key': api_key,
-        'Content-Type': 'application/x-www-form-urlencoded',
+        'Content-Type': 'application/json',
         "Connection": "keep-alive"
     }
-    response = session.post(url, data=text_data, headers=headers)
-    if response.status_code == 201:
-        print("Text data sent successfully")
+    #print(text_data)
+    response = session.post(url, text_data, headers=headers)
+    if response.status_code == 200:
+        #print("Text data sent successfully")
+        sleep(0)
     else:
         print(f"Failed to send text data. Status code: {response.status_code}, Response: {response.text}")

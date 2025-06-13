@@ -2,7 +2,6 @@ E-F100 - Ein Fehler beim lesen der Sensordaten ist aufgetreten!
 E-F101 - Ein Fehler beim Speichern der Sensordaten ist aufgereten
 E-F102 - Fehler beim lesen der bisherigen Sensorpackete, zur initialisierung eines Startweres
 E-S100 - Ein Fehler bei der Sensorverarbeitung ist aufgetreten!
-E-S101 - Ein Fehler beim Aufnehmen oder spiechern eines Bildes ist aufgetreten!
 E-S102 - Fehler beim lesen der Zeit
 E-S103 - Fehler beim lesen von bme280
 E-S104 - Fehler GPS
@@ -13,9 +12,13 @@ E-S202 - Fehler beim initialisiren von bme280
 E-S203 - Fehler beim initialisiren von ccs811
 E-S204 - Fehler beim starten von ccs811
 E-S205 - Fehler beim Empfangen von Daten, während der Aufwärmphase des ccs811
+E-I100 - Ein Fehler beim Aufnehmen oder spiechern eines Bildes ist aufgetreten!
+E-I101 - Failed to read image
+E-I102 - Failed to read image after retrying 10 times
 E-M999 - Main Tread inaktiv
 E-M888 - Sensor Tread reagiert nicht mehr
 E-M777 - GPS Tread reagiert nicht mehr
 E-M666 - Image Tread reagiert nicht mehr
 E-E111 - Systemabsturz, System startet neu
+E-E222 - Systemabsturz, System startet neu (watchdog)
 E-TEST - Selbsttest des Fehlercode Systems erfolgreich
