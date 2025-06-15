@@ -1,11 +1,15 @@
 E-F100 - Ein Fehler beim lesen der Sensordaten ist aufgetreten!
 E-F101 - Ein Fehler beim Speichern der Sensordaten ist aufgereten
 E-F102 - Fehler beim lesen der bisherigen Sensorpackete, zur initialisierung eines Startweres
+E-I103 - Fehler beim lesen der bisherigen Bilder, zur initialisierung eines Startweres
+I-S100 - Sensorverarbeitung gestartet
 E-S100 - Ein Fehler bei der Sensorverarbeitung ist aufgetreten!
 E-S102 - Fehler beim lesen der Zeit
 E-S103 - Fehler beim lesen von bme280
 E-S104 - Fehler GPS
 E-S105 - Fehler beim lesen von ccs811
+E-S106 - Fehler beim lesen der internen Temperatur
+E-S107 - Fehler beim erfassen der aktuellen Zeit
 E-S200 - Fehler beim initialisiren von I2c
 E-S201 - Fehler beim initialisiren von HMC5883L
 E-S202 - Fehler beim initialisiren von bme280
@@ -13,12 +17,25 @@ E-S203 - Fehler beim initialisiren von ccs811
 E-S204 - Fehler beim starten von ccs811
 E-S205 - Fehler beim Empfangen von Daten, während der Aufwärmphase des ccs811
 E-I100 - Ein Fehler beim Aufnehmen oder spiechern eines Bildes ist aufgetreten!
-E-I101 - Failed to read image
+W-I101 - Failed to read image
 E-I102 - Failed to read image after retrying 10 times
+I-M100 - Main Tread gestartet
 E-M999 - Main Tread inaktiv
 E-M888 - Sensor Tread reagiert nicht mehr
 E-M777 - GPS Tread reagiert nicht mehr
 E-M666 - Image Tread reagiert nicht mehr
 E-E111 - Systemabsturz, System startet neu
 E-E222 - Systemabsturz, System startet neu (watchdog)
-E-TEST - Selbsttest des Fehlercode Systems erfolgreich
+I-TEST - Selbsttest des Fehlercode Systems erfolgreich
+I-G001 - Bodenstation gestartet
+I-G002 - Empfang gestoppt
+E-G002 - Empfang mit einem Fehler gestoppt
+I-G003 - Empfang gestartet
+W-G004 - Fehler bein verarbeiten der Daten
+W-G005 - Fehler beim verarbeiten eines Bildes
+W-G006 - Bodenstation führt neuverarbeitung aller Daten aus!
+W-G007 - Fehlercode nicht gefunden.
+E-G008 - Fehlercode Datei nicht gefunden.
+E-G009 - Ein Fehler beim verarbeiten eines Fehlers ist aufgetreten: {e}
+W-G010 - Unidentifizierbares Paket empfangen
+W-G010 - Leeres Paket empfangen

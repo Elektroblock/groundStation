@@ -12,9 +12,12 @@ import glob
 
 
 def run():
+    message_queue = Queue()
+    message_queue.put({"error": "I-G001", "time": time.time()})
     if (DEBUG):
+        message_queue.put({"error": "W-G006", "time": time.time()})
         with open("data.json", 'w') as file:
-            json.dump({"data": []}, file, indent=4)
+            json.dump({"data": [], "lastFile": 0}, file, indent=4)
 
         print("cleared data.json")
 
@@ -28,9 +31,8 @@ def run():
         time.sleep(2)
 
     webserver_queue = Queue()
-    message_queue = Queue()
 
-    message_queue.put("E-TEST")
+
     receiver_thread = Thread(target=wait_for_data, args=(webserver_queue, message_queue,))
     webclient_thread = Thread(target=run_webserver_client, args=(webserver_queue, message_queue,))
     debug_server_thread = Thread(target=debugThread, args=(message_queue,))
