@@ -38,4 +38,4 @@ W-G007 - Fehlercode nicht gefunden.
 E-G008 - Fehlercode Datei nicht gefunden.
 E-G009 - Ein Fehler beim verarbeiten eines Fehlers ist aufgetreten: {e}
 W-G010 - Unidentifizierbares Paket empfangen
-W-G010 - Leeres Paket empfangen
+W-G011 - Leeres Paket empfangen
