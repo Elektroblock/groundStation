@@ -17,7 +17,7 @@ def run():
     if (DEBUG):
         message_queue.put({"error": "W-G006", "time": time.time()})
         with open("data.json", 'w') as file:
-            json.dump({"data": [], "lastFile": 0}, file, indent=4)
+            json.dump({"data": [], "lastFile": 2}, file, indent=4)
 
         print("cleared data.json")
 

@@ -22,8 +22,8 @@ def wait_for_data(webserver_queue, message_queue):
     lastProcessed = json_data["lastFile"]
     #exit()
     while True:
-        if os.path.isfile(input_filepath + "/" + str(lastProcessed) + ".bin"):
-            filename = input_filepath + "/" + str(lastProcessed) + ".bin"
+        if os.path.isfile(input_filepath + "/" + str(lastProcessed-1) + ".bin"):
+            filename = input_filepath + "/" + str(lastProcessed-1) + ".bin"
             lastProcessed += 1
             #print(filename)
 
